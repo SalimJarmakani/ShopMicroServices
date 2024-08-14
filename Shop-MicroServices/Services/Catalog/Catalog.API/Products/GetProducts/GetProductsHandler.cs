@@ -9,6 +9,15 @@ internal class GetProductsHandler(IDocumentSession session,ILogger<GetProductsHa
 	{
 		IEnumerable<Product> products = await session.Query<Product>().ToListAsync(token: cancellationToken);
 
+		var productNameList = products.Select(products => products.Name).ToList();
+
+		LogProducts(logger, productNameList);
+
 		return new GetProductsResult(products);
+	}
+
+	private static void LogProducts(ILogger<GetProductsHandler> logger, List<string?> productNameList)
+	{
+		logger.LogInformation($"Get Products Query Returned the Following List Of Products: {String.Join(",", productNameList)}");
 	}
 }
