@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.AspNetCore.Http.HttpResults;
+using OpenTelemetry.Trace;
 
 namespace Catalog.API.Products.GetProductByCategory;
 
@@ -10,7 +11,7 @@ public class GetProductByCategoryEndpoint : ICarterModule
 {
 	public void AddRoutes(IEndpointRouteBuilder app)
 	{
-		app.MapGet("/products/category/{category}", async (string category,ISender sender) =>
+		app.MapGet("/products/category/{category}", async (string category, ISender sender) =>
 		{
 
 			var result = await sender.Send(new GetProductByCategoryQuery(category));
@@ -19,6 +20,11 @@ public class GetProductByCategoryEndpoint : ICarterModule
 
 			return Results.Ok(response);
 
-		});
+		})
+		.WithDescription("Gets a List of products based on the category they belong to")
+		.WithName("GetProductByCategory")
+		.Produces<GetProductByCategoryResponse>(StatusCodes.Status200OK)
+		.ProducesProblem(StatusCodes.Status400BadRequest)
+		.WithSummary("Get Product By Category");
 	}
 }
