@@ -8,7 +8,7 @@ public class UpdateProductEndpoint : ICarterModule
 {
 	public void AddRoutes(IEndpointRouteBuilder app)
 	{
-		app.MapPost("/products/Update", async (ISender sender, UpdateProductRequest request) =>
+		app.MapPut("/products", async (ISender sender, UpdateProductRequest request) =>
 		{
 			try
 			{
@@ -22,6 +22,10 @@ public class UpdateProductEndpoint : ICarterModule
 				
 				return Results.BadRequest(e.Message);
 			}
-		});
+		})
+		.WithName("UpdateProduct")
+		.Produces(StatusCodes.Status200OK)
+		.ProducesProblem(StatusCodes.Status400BadRequest)
+		.WithDescription("Updates the Product with the given Id");
 	}
 }
