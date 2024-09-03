@@ -1,5 +1,7 @@
 
 
+using Core.Services.Behaviors;
+
 var builder = WebApplication.CreateBuilder(args);
 
 var assembly = typeof(Program).Assembly;
@@ -11,6 +13,7 @@ builder.Services.AddMediatR(opt =>
 {
 	opt.RegisterServicesFromAssembly(assembly);
 	opt.AddOpenBehavior(typeof(ValidationBehavior<,>));
+	opt.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
 
 builder.Services.AddMarten(opts =>
