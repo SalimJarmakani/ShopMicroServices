@@ -32,7 +32,7 @@ internal class UpdateProductHandler(IDocumentSession session,ILogger<UpdateProdu
 
 		if (product is null)
 		{
-			throw new ProductNotFoundException();
+			throw new ProductNotFoundException(request.Id);
 		}
 
 		product.Name = request.Name;

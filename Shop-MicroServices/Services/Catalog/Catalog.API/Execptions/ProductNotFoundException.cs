@@ -1,6 +1,8 @@
-﻿namespace Catalog.API.Execptions;
+﻿using Core.Services.Exceptions;
 
-public class ProductNotFoundException : Exception
+namespace Catalog.API.Execptions;
+
+public class ProductNotFoundException : NotFoundException
 {
-	public ProductNotFoundException() : base("Product Not Found") { }
+	public ProductNotFoundException(Guid id) : base("Product",id) { }
 }

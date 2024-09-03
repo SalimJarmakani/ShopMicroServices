@@ -6,3 +6,5 @@ global using Core.Services.CQRS;
 global using Marten;
 global using Catalog.API.Execptions;
 global using FluentValidation;
+global using Core.Services.Behaviours;
+global using Core.Services.Exceptions.Handler;

@@ -1,4 +1,4 @@
-using Core.Services.Behaviours;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,8 +20,13 @@ builder.Services.AddMarten(opts =>
 
 builder.Services.AddValidatorsFromAssembly(assembly);
 
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
+
 var app = builder.Build();
 
 app.MapCarter();
 // Configure the HTTP Request Pipeline
+
+app.UseExceptionHandler(opts => { });
+
 app.Run();

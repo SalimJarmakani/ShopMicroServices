@@ -24,7 +24,7 @@ internal class DeleteProductHandler(IDocumentSession session,ILogger<DeleteProdu
 			.FirstOrDefaultAsync(cancellationToken);
 
 		if (product is null) {
-			throw new ProductNotFoundException();
+			throw new ProductNotFoundException(request.Id);
 		}
 
 		session.Delete(product);
