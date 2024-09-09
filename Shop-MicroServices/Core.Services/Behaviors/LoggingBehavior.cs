@@ -25,7 +25,7 @@ public class LoggingBehavior<TRequest, TResponse> (ILogger<LoggingBehavior<TRequ
 
 		if (timerPeriod.Seconds > 5)
 		{
-			logger.LogWarning($"PERFORMANCE ISSUE => the request {request} took {timerPeriod}");
+			logger.LogWarning($"PERFORMANCE ISSUE => the request: {request} took: {timerPeriod}");
 		}
 
 
