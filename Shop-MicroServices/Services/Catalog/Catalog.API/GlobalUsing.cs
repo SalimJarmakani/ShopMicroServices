@@ -8,3 +8,5 @@ global using Catalog.API.Execptions;
 global using FluentValidation;
 global using Core.Services.Behaviours;
 global using Core.Services.Exceptions.Handler;
+global using Catalog.API.Data;
+global using Marten.Pagination;
