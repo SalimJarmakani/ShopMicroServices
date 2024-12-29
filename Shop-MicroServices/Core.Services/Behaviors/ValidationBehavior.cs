@@ -2,7 +2,7 @@
 using FluentValidation;
 using MediatR;
 
-namespace Core.Services.Behaviours;
+namespace Core.Services.Behaviors;
 
 public class ValidationBehavior<TRequest, TResponse>
 	(IEnumerable<IValidator<TRequest>> validators)
