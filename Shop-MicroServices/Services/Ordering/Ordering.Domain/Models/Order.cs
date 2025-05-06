@@ -11,6 +11,7 @@ public class Order: Aggregate<OrderId>
 
     public OrderName OrderName {  get; private set; } = default!;
     public Address ShippingAddress { get; private set; } = default!;
+    public Address BillingAddress { get; private set; } = default!;
     public Payment Payment { get; private set; } = default!;
     public OrderStatus Status { get; private set; } = OrderStatus.Pending;
 
