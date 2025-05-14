@@ -7,8 +7,8 @@ internal class InitialData
 
         new List<Customer> {
 
-            Customer.Create(CustomerId.Of(new Guid("a346b657-fc60-4f9c-83b7-bdb7c65b5b34")),"john","john@email.com"),
-            Customer.Create(CustomerId.Of(new Guid("6ec62e72-97d1-433c-82ca-0aeb61372be5")), "steve", "steve@email.com"),
+            Customer.Create(CustomerId.Of(new Guid("58c49479-ec65-4de2-86e7-033c546291aa")),"john","john@email.com"),
+            Customer.Create(CustomerId.Of(new Guid("189dc8dc-990f-48e0-a37b-e6f2b60b9d7d")), "steve", "steve@email.com"),
 
 
         };
