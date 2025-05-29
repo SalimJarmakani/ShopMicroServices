@@ -1,4 +1,4 @@
-﻿namespace Core.Services.Messaging;
+﻿namespace Core.Services.Messaging.Events;
 
 public record IntegrationEvent
 {

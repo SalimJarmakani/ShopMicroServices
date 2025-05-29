@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core.Services.Messaging\Core.Services.Messaging.csproj" />
     <ProjectReference Include="..\..\..\Core.Services\Core.Services.csproj" />
   </ItemGroup>
 

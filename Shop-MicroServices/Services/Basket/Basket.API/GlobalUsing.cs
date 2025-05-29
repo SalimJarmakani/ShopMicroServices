@@ -12,3 +12,4 @@ global using FluentValidation;
 global using Core.Services.Exceptions.Handler;
 global using HealthChecks.UI.Client;
 global using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+global using Basket.API.Dtos;
