@@ -23,7 +23,7 @@ public class ProductListModel(
 
             SelectedCategory = categoryName;
         }
-
+        
         else
         {
             ProductList = response.Products;
