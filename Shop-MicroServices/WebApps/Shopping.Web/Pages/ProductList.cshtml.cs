@@ -15,7 +15,7 @@ public class ProductListModel(
     {
         var response = await catalogService.GetProducts();
 
-        CategoryList = response.Products.SelectMany(p => p.Category).Distinct();
+        CategoryList = response.Products.SelectMany(p => p.Category).Distinct() ?? [];
 
         if (!string.IsNullOrEmpty(categoryName))
         {
@@ -49,9 +49,10 @@ public class ProductListModel(
             Quantity=1
         });
 
+
         await basketService.StoreBasket(new StoreBasketRequest(basket));
 
-        return Page();
+        return RedirectToPage("Cart");
     }
     
 }

@@ -25,9 +25,14 @@
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Categories</div>
                 <ul class="list-group category_block">
 
-                    @foreach (var category in Model.CategoryList)
+                    @if (Model.CategoryList != null)
                     {
-                        <li class="list-group-item"><a asp-page="Product" asp-route-categoryId="@category">@category</a></li>
+                        foreach (var category in Model.CategoryList)
+                        {
+                            <li class="list-group-item">
+                                <a asp-page="Product" asp-route-categoryName="@category">@category</a>
+                            </li>
+                        }
                     }
 
                 </ul>
